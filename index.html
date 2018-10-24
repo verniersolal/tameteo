@@ -31,22 +31,22 @@
     <h2 class="center"> Bienvenue sur TAMeteo </h2>
 
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" id="form">
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">directions_transit</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Arrêt de départ</label>
+                    <input id="start_station" type="text" name="start_station" class="validate">
+                    <label for="start_station">Arrêt de départ</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">directions_transit</i>
-                    <input id="icon_telephone2" type="tel" class="validate">
-                    <label for="icon_telephone2">Arrêt d'arrivée</label>
+                    <input id="stop_station" type="text" name="stop_station" class="validate">
+                    <label for="stop_station">Arrêt d'arrivée</label>
                 </div>
                 <div class="input-field col s6 offset-s3">
                     <i class="material-icons prefix">access_time</i>
-                    <input id="icon_prefix" type="text" class="timepicker">
-                    <label for="icon_prefix">Heure d'arrivée</label>
+                    <input id="stop_hour" type="text" name="stop_hour" class="timepicker">
+                    <label for="stop_hour">Heure d'arrivée</label>
                 </div>
             </div>
         </form>
