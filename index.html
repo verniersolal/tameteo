@@ -35,35 +35,42 @@
         <form class="col s12" id="form">
             <div class="row">
                 <label class="col s2 offset-s1">
-                    <input class="with-gap" name="group1" type="radio" checked/>
-                    <span>RER</span>
-                </label>
-                <label class="col s2">
-                    <input class="with-gap" name="group1" type="radio"/>
+                    <input class="with-gap rad_btn" id="metros" name="transport" type="radio" checked/>
                     <span>Metro</span>
                 </label>
                 <label class="col s2">
-                    <input class="with-gap" name="group1" type="radio"/>
+                    <input class="with-gap rad_btn" id="rers" name="transport" type="radio"/>
+                    <span>RER</span>
+                </label>
+                <label class="col s2">
+                    <input class="with-gap rad_btn" id="bus" name="transport" type="radio"/>
                     <span>Bus</span>
                 </label>
                 <label class="col s2">
-                    <input class="with-gap" name="group1" type="radio"/>
+                    <input class="with-gap rad_btn" id="tramways" name="transport" type="radio"/>
                     <span>Tramway</span>
                 </label>
                 <label class="col s2">
-                    <input class="with-gap" name="group1" type="radio"/>
+                    <input class="with-gap rad_btn" id="noctiliens" name="transport" type="radio"/>
                     <span>Noctilien</span>
                 </label>
             </div>
             <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input id="line" type="text" class="autocomplete">
+                    <label for="line">Choisir la ligne</label>
+                </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">directions_transit</i>
-                    <input id="start_station" type="text" name="start_station" class="validate">
+                    <input  type="text" name="start_station" id="start_station" class="autocomplete stations">
                     <label for="start_station">Arrêt de départ</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">directions_transit</i>
-                    <input id="stop_station" type="text" name="stop_station" class="validate">
+                    <input  type="text" name="stop_station" id="stop_station" class="autocomplete stations">
                     <label for="stop_station">Arrêt d'arrivée</label>
                 </div>
                 <div class="input-field col s6 offset-s3 ">
