@@ -1,0 +1,28 @@
+.input-field label {
+    color: #448aff;
+}
+.input-field .prefix.active {
+    color: #448aff;
+}
+
+/* label underline focus color */
+.input-field input:focus {
+    border-bottom: 1px solid #448aff !important;
+    box-shadow: 0 1px 0 0 #448aff !important
+}
+
+.input-field input:focus + label {
+    color: #448aff !important;
+}
+
+.timepicker-container {
+    background-color:#448aff !important;
+}
+
+.timepicker-digital-display {
+    background-color: #448aff !important;
+}
+
+.timepicker-container button{
+    color:white !important;
+}
