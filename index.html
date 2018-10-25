@@ -28,10 +28,33 @@
     </div>
 </nav>
 <div class="container">
-    <h2 class="center"> Bienvenue sur TAMeteo </h2>
-
+    <div class="row">
+        <h2 class="center"> Bienvenue sur TAMeteo </h2>
+    </div>
     <div class="row">
         <form class="col s12" id="form">
+            <div class="row">
+                <label class="col s2 offset-s1">
+                    <input class="with-gap" name="group1" type="radio" checked/>
+                    <span>RER</span>
+                </label>
+                <label class="col s2">
+                    <input class="with-gap" name="group1" type="radio"/>
+                    <span>Metro</span>
+                </label>
+                <label class="col s2">
+                    <input class="with-gap" name="group1" type="radio"/>
+                    <span>Bus</span>
+                </label>
+                <label class="col s2">
+                    <input class="with-gap" name="group1" type="radio"/>
+                    <span>Tramway</span>
+                </label>
+                <label class="col s2">
+                    <input class="with-gap" name="group1" type="radio"/>
+                    <span>Noctilien</span>
+                </label>
+            </div>
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">directions_transit</i>
@@ -49,7 +72,8 @@
                     <label for="stop_hour">Heure d'arrivée</label>
                 </div>
             </div>
-            <a id="research" class="waves-effect waves-light btn blue accent-2 input-field col s3 offset-s9"> <i class="material-icons right ">search</i>Rechercher</a>
+            <a id="research" class="waves-effect waves-light btn blue accent-2 input-field col s3 offset-s9"> <i
+                    class="material-icons right ">search</i>Rechercher</a>
         </form>
     </div>
 </div>

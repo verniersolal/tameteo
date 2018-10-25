@@ -10,18 +10,19 @@ function init() {
     var research_button = document.getElementById("research");
     research_button.addEventListener('click', logFormData);
 
-    var getDataUrl = "http://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_TpsReel.csv";
+    var getTAMData = "https://api-ratp.pierre-grimaud.fr/v3/lines/metros";
 
-    fetch(getDataUrl, myInit) // Call the fetch function passing the url of the API as a parameter
+    var sncfCoverageUrl = "https://api.sncf.com/v1/coverage/";
+    var stringAuth = "Basic YzhjNjk0NjMtOGM5Zi00YzllLTk5M2ItNmEyZDdmNzUzODU1Og==";
+
+    fetch(getTAMData, {headers: headers}) // Call the fetch function passing the url of the API as a parameter
         .then(function (response) {
-            console.log(response);
-            reponse.json().then(function (data) {
-                console.log("toto", data);
+            response.text().then(function (value) {
+                console.log(value);
             })
         })
         .catch(function (error) {
             console.log(error)
             // This is where you run code if the server returns any errors
         });
-
 }
