@@ -3,9 +3,10 @@ function logFormData() {
 }
 
 function init() {
-    $(document).ready(function () {
-        $('.timepicker').timepicker();
-    });
+    // Materialize Time picker
+    var elems = document.querySelectorAll('.timepicker');
+    var instances = M.Timepicker.init(elems,{twelveHour : false,i18n : {done:"Valider",cancel:"Annuler"}});
+
     var research_button = document.getElementById("research");
-    research_button.addEventListener('click',logFormData);
+    research_button.addEventListener('click', logFormData);
 }
