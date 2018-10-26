@@ -5,6 +5,7 @@ var stationsByLine = {};
 var directionByLine = {};
 var schedulesResults = [];
 var traficByLine = "";
+var placenameByLine = [];
 
 // Line Autocomplete
 var lineInput = document.querySelector('#line');
@@ -53,6 +54,8 @@ function getStations() {
                 var stations = json.result.stations;
                 for (var i = 0; i < stations.length; i++) {
                     stationsByLine[stations[i].name] = stations[i].slug;
+                    var placename = stations[i].name;
+                    placenameByLine.push(placename.split(' ').join('+'));
                 }
                 var instances = M.Autocomplete.init(stationsInput, {data: stationsByLine, minLength: 0});
             })
@@ -157,11 +160,35 @@ function resetFormData() {
     getTransport();
 }
 
+function getEventsByPlacename() {
+    var url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=evenements-a-paris&q=";
+    var today = new Date();
+    today = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
+    var dateInterval = "(date_start%3C%3D%22" + today + "%22+AND+date_end%3E%3D%22" + today + "%22)+";
+    var placename = "(";
+    for (var i = 0; i < placenameByLine.length; i++) {
+        placename += "placename%3D%22" + placenameByLine[i] + "%22+OR+"
+    }
+    placename = placename.slice(0, -4);
+    placename += ")";
+    url = url + dateInterval + "AND" + placename;
+    var test = "https://opendata.paris.fr/api/records/1.0/search/?dataset=evenements-a-paris&q=(date_start%3C%3D%222018-10-26%22+AND+date_end%3E%3D%222018-10-26%22)+AND+(placename%3D%22villette%22)"
+    fetch(url) // Call the fetch function passing the url of the API as a parameter
+        .then(function (response) {
+            response.json().then(function (json) {
+
+            })
+        })
+        .catch(function (error) {
+            // This is where you run code if the server returns any errors
+        });
+}
+
 function init() {
     getTransport();
     document.getElementById("research").addEventListener('click', getTraficByLine);
     document.getElementById("research").addEventListener('click', getSchedules);
-
+    document.getElementById("research").addEventListener('click', getEventsByPlacename);
     var transport_buttons = document.getElementsByClassName("rad_btn");
     for (var i = 0; i < transport_buttons.length; i++) {
         transport_buttons[i].addEventListener('click', clearAll);
