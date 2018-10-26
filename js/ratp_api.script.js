@@ -62,9 +62,14 @@ function getStations() {
         });
 }
 
-function clearInput() {
+function clearStationAndDirection() {
     document.getElementById("start_station").value = "";
     document.getElementById("direction").value = "";
+}
+
+function clearAll() {
+    clearStationAndDirection();
+    document.getElementById("line").value = "";
 }
 
 function getDirection() {
@@ -159,6 +164,7 @@ function init() {
 
     var transport_buttons = document.getElementsByClassName("rad_btn");
     for (var i = 0; i < transport_buttons.length; i++) {
+        transport_buttons[i].addEventListener('click', clearAll);
         transport_buttons[i].addEventListener('click', getTransport);
     }
     var inputs = document.getElementsByTagName("input");
@@ -168,5 +174,5 @@ function init() {
     document.getElementById("resetButton").addEventListener('click', resetFormData);
     document.getElementById("line").addEventListener('change', getStations);
     document.getElementById("line").addEventListener('change', getDirection);
-    document.getElementById("line").addEventListener('change', clearInput);
+    document.getElementById("line").addEventListener('change', clearStationAndDirection);
 }
