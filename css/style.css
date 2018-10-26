@@ -59,10 +59,10 @@
     display: none;
 }
 
-#trafic i{
-    display: inline-flex;
-    vertical-align: middle;
+#trafic i {
+    margin-right: 5px;
 }
-#resetButton{
+
+#resetButton {
     display: none;
 }
