@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
     <title>Ne Rate Plus Rien</title>
 </head>
-
 <body onload="init();" class="blue-grey lighten-5">
 <div class="navbar-fixed">
     <nav>
@@ -27,6 +26,21 @@
             </ul>
         </div>
     </nav>
+</div>
+<div class="right teal row white-text z-depth-4" id="weather" style="display: block;">
+    <div class="col s12 center">
+        <p id="current-time"></p>
+    </div>
+    <div class="col s12 center">
+        <img id="weather-icon" src="">
+        <p id="weather-description"></p>
+    </div>
+    <div class="col s6 center">
+        <p id="temp-max" class="orange-text"></p>
+    </div>
+    <div class="col s6 center">
+        <p id="temp-min"></p>
+    </div>
 </div>
 <div class="container">
     <div class="row">
