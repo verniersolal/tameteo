@@ -1,47 +1,68 @@
 .input-field label {
-    color: #448aff;
+    color: #009688;
 }
+
 .input-field .prefix.active {
-    color: #448aff;
+    color: #009688;
 }
 
 /* label underline focus color */
 .input-field input:focus {
-    border-bottom: 1px solid #448aff !important;
-    box-shadow: 0 1px 0 0 #448aff !important
+    border-bottom: 1px solid #009688 !important;
+    box-shadow: 0 1px 0 0 #009688 !important
 }
 
 .input-field input:focus + label {
-    color: #448aff !important;
+    color: #009688 !important;
 }
 
 .timepicker-container {
-    background-color:#448aff !important;
+    background-color: #009688 !important;
 }
 
 .timepicker-digital-display {
-    background-color: #448aff !important;
+    background-color: #009688 !important;
 }
 
-.timepicker-container button{
-    color:white !important;
+.timepicker-container button {
+    color: white !important;
 }
-
 
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:after {
-    background-color: #448aff;
+    background-color: #009688;
 }
 
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {
-    border-color: #448aff !important;
+    border-color: #009688 !important;
 }
+
 [type="radio"] + span {
     font-size: 1.2rem !important;
 }
 
 [type="radio"]:checked + span {
     font-weight: bold;
+}
+
+.autocomplete-content li img {
+    display: none;
+}
+
+#schedules {
+    display: none;
+}
+
+#trafic {
+    display: none;
+}
+
+#trafic i{
+    display: inline-flex;
+    vertical-align: middle;
+}
+#resetButton{
+    display: none;
 }
