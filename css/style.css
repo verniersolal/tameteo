@@ -13,17 +13,17 @@ nav {
 }
 
 .input-field label {
-    color: #009688;
+    color: white;
 }
 
 .input-field .prefix.active {
-    color: #009688;
+    color: white;
 }
 
 /* label underline focus color */
 .input-field input:focus {
-    border-bottom: 1px solid #009688 !important;
-    box-shadow: 0 1px 0 0 #009688 !important
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important
 }
 
 .input-field input:focus + label {
@@ -35,7 +35,7 @@ nav {
 }
 
 .timepicker-digital-display {
-    background-color: #009688 !important;
+    background-color: white !important;
 }
 
 .timepicker-container button {
@@ -44,13 +44,13 @@ nav {
 
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:after {
-    background-color: #009688;
+    background-color: white;
 }
 
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {
-    border-color: #009688 !important;
+    border-color: white !important;
 }
 
 [type="radio"] + span {
@@ -61,12 +61,18 @@ nav {
     font-weight: bold;
 }
 
+label{
+    color: white;
+}
+
 .autocomplete-content li img {
     display: none;
 }
 
 #schedules {
     display: none;
+    background: rgba(36,38,39,0.8);
+    border-radius: 10px;
 }
 
 #trafic {
@@ -83,8 +89,8 @@ nav {
 
 #weather {
     display: none;
-    border-radius: 0 0 0 15px;
-    margin-top: 3px;
+    border-radius: 15px 0 0 15px;
+    background: rgba(36,38,39,0.8);
 }
 
 #weather * {
@@ -93,4 +99,13 @@ nav {
 
 #temp-min {
     color: #26c6da;
+}
+
+#carouselEvents {
+    display: none;
+    border-radius: 10px;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    font-weight: bold;
 }
