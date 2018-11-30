@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/bg.jpg');
+    background-image: url('../img/bg1.jpg');
     background-repeat: repeat-y;
     background-size: cover
 }
@@ -30,18 +30,6 @@ nav {
     color: #009688 !important;
 }
 
-.timepicker-container {
-    background-color: #009688 !important;
-}
-
-.timepicker-digital-display {
-    background-color: white !important;
-}
-
-.timepicker-container button {
-    color: white !important;
-}
-
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:after {
     background-color: white;
@@ -53,6 +41,12 @@ nav {
     border-color: white !important;
 }
 
+[type="radio"] + span:after,
+[type="radio"].with-gap + span:before,
+[type="radio"].with-gap + span:after {
+    border-color: white !important;
+}
+
 [type="radio"] + span {
     font-size: 1.2rem !important;
 }
@@ -61,7 +55,7 @@ nav {
     font-weight: bold;
 }
 
-label{
+label {
     color: white;
 }
 
@@ -71,7 +65,7 @@ label{
 
 #schedules {
     display: none;
-    background: rgba(36,38,39,0.8);
+    background: rgba(36, 38, 39, 0.8);
     border-radius: 10px;
 }
 
@@ -90,7 +84,7 @@ label{
 #weather {
     display: none;
     border-radius: 15px 0 0 15px;
-    background: rgba(36,38,39,0.8);
+    background: rgba(36, 38, 39, 0.8);
 }
 
 #weather * {

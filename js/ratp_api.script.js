@@ -148,10 +148,12 @@ function displaySchedules() {
 
 function displayResetButton() {
     $('#resetButton').show();
+    $("#research").attr('class', 'waves-effect waves-light btn teal input-field col s2 offset-s2');
 }
 
 function resetFormData() {
     $('#resetButton').hide();
+    $("#research").attr('class', 'waves-effect waves-light btn teal input-field col s2 offset-s5');
     document.getElementById("start_station").value = "";
     document.getElementById("line").value = "";
     document.getElementById("direction").value = "";
