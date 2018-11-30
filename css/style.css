@@ -1,3 +1,17 @@
+body {
+    background-image: url('../img/bg.jpg');
+    background-repeat: repeat-y;
+    background-size: cover
+}
+
+/*NAVBAR BACKGROUND*/
+nav {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
 .input-field label {
     color: #009688;
 }
@@ -67,7 +81,7 @@
     display: none;
 }
 
-#weather{
+#weather {
     display: none;
     border-radius: 0 0 0 15px;
     margin-top: 3px;
@@ -77,6 +91,6 @@
     margin: 0;
 }
 
-#temp-min{
-    color:#26c6da;
+#temp-min {
+    color: #26c6da;
 }
