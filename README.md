@@ -1,3 +1,4 @@
 # Tameteo
 
-Web application using TAM and Weather API's.
+Web mashup application using Weahter API, Event API and RATP API. 
+Pull and try !
