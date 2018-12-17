@@ -12,6 +12,16 @@ var lineInput = document.querySelector('#line');
 var stationsInput = document.querySelectorAll('#start_station');
 var directionInput = document.querySelector('#direction');
 
+/**
+ * Ce fichier script développe la partie de récupération des données de la RATP.
+ * Nous utilisons l'api API-RATP modifiée par Pierre Grimaud
+ */
+
+
+/**
+ * Permet de récupérer la valeur des champs du formulaires
+ * @returns {{transport: string, line: *, start_station: *, direction: *}}
+ */
 function getSelectedData() {
     return {
         transport: transport,
@@ -21,11 +31,19 @@ function getSelectedData() {
     }
 }
 
+/**
+ * Récupère le type de transport sélectionné.
+ * Appelle la fonction qui récupère les lignes de ce type de transport.
+ */
 function getTransport() {
     transport = document.querySelector('input[name="transport"]:checked').id;
     getLines(transport);
 }
 
+/**
+ * Récupère les lignes en fonction du type de transport
+ * @param transport le type de transport
+ */
 function getLines(transport) {
     linesByTransport = {};
     var url = "https://api-ratp.pierre-grimaud.fr/v3/lines/" + transport;
@@ -44,6 +62,9 @@ function getLines(transport) {
         });
 }
 
+/**
+ * Récupère les stations de la ligne de transport sélectionnée
+ */
 function getStations() {
     stationsByLine = {};
     var line = linesByTransport[document.getElementById("line").value];
@@ -65,16 +86,25 @@ function getStations() {
         });
 }
 
+/**
+ * Réinitialise les champs `Station` et `Direction` du formulaire
+ */
 function clearStationAndDirection() {
     document.getElementById("start_station").value = "";
     document.getElementById("direction").value = "";
 }
 
+/**
+ * Réinitialise la totalité des champs du formulaire
+ */
 function clearAll() {
     clearStationAndDirection();
     document.getElementById("line").value = "";
 }
 
+/**
+ * Retourne les choix de direction de la ligne de transport sélectionnée
+ */
 function getDirection() {
     directionByLine = {};
     var line = linesByTransport[document.getElementById("line").value];
@@ -94,6 +124,9 @@ function getDirection() {
         });
 }
 
+/**
+ * Récupère les horaires de départ en fonction des champs du formulaire
+ */
 function getSchedules() {
     schedulesResults = {};
     var selectedData = getSelectedData();
@@ -110,11 +143,14 @@ function getSchedules() {
         });
 }
 
+/**
+ * Récupère l'état du trafic actuel sur la ligne sélectionnée
+ */
 function getTraficByLine() {
     traficByLine = "";
     var selectedData = getSelectedData();
     if (selectedData.transport !== "bus" && selectedData.transport !== "noctiliens") {
-        var url = "https://api-ratp.pierre-grimaud.fr/v3/traffic/" + selectedData.transport + "/" + selectedData.line
+        var url = "https://api-ratp.pierre-grimaud.fr/v3/traffic/" + selectedData.transport + "/" + selectedData.line;
         fetch(url) // Call the fetch function passing the url of the API as a parameter
             .then(function (response) {
                 response.json().then(function (json) {
@@ -128,12 +164,18 @@ function getTraficByLine() {
     }
 }
 
+/**
+ * Affiche l'état du trafic actuel sur la ligne sélectionnée dans le HTML
+ */
 function displayTrafic() {
     var traficDiv = document.getElementById("trafic");
     traficDiv.innerHTML = "<i class=\"small teal-text material-icons\">info</i>" + traficByLine;
     $("#trafic").show();
 }
 
+/**
+ * Affiche les horaires de départ en fonction des champs du formulaire
+ */
 function displaySchedules() {
     var tableContent = document.getElementsByTagName("tbody");
     $("table").find('tbody').empty();
@@ -146,11 +188,17 @@ function displaySchedules() {
     });
 }
 
+/**
+ * Affiche le bouton de réinitialisation du formulaire
+ */
 function displayResetButton() {
     $('#resetButton').show();
     $("#research").attr('class', 'waves-effect waves-light btn teal input-field col s2 offset-s2');
 }
 
+/**
+ * Réinitalise le formulaire avec les valeurs par défaut
+ */
 function resetFormData() {
     $('#resetButton').hide();
     $("#research").attr('class', 'waves-effect waves-light btn teal input-field col s2 offset-s5');
@@ -162,6 +210,9 @@ function resetFormData() {
     getTransport();
 }
 
+/**
+ * Fonction d'initialisation appelée dans le body onload()
+ */
 function init() {
     getTransport();
     document.getElementById("research").addEventListener('click', getTraficByLine);

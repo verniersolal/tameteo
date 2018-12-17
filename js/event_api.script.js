@@ -1,3 +1,14 @@
+/**
+ * Ce fichier script développe la partie de récupération des évenements sur Paris.
+ * Nous utilisons l'api des evenements fournie par opendata.paris
+ */
+
+
+/**
+ *  Affiche les événements  qui ont lieu proche de la ligne, dans un élement web carousel
+ *
+ * @param events le tableau des évènements qui ont lieu proche de la ligne sélectionnée
+ */
 function displayEventsByPlacename(events) {
     var colors = ["red", "amber", "green", "blue", "pink", "cyan", "purple", "orange", "brown", "grey"];
     if(events.length > 0) {
@@ -19,7 +30,10 @@ function displayEventsByPlacename(events) {
     }
 }
 
-
+/**
+ * Fait un appel fetch pour récupérer les événements en fonction de ligne de transport sélectionné
+ * Stocke le resultat dans un tableau et appelle ensuite la fonction d'affichage
+ */
 function getEventsByPlacename() {
     var url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=evenements-a-paris&q=";
     var today = new Date();

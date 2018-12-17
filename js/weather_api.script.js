@@ -1,3 +1,12 @@
+/**
+ * Ce fichier script développe la partie de récupération des données de la météo sur Paris.
+ * Nous utilisons l'api open weather map
+ */
+
+/**
+ * Affiche le status météo de Paris en temps réel
+ * @param json
+ */
 function displayWeather(json) {
     var currentTime = new Date().toLocaleTimeString('fr-FR', {
         hour12: false,
@@ -17,6 +26,9 @@ function displayWeather(json) {
     $('#weather').show();
 }
 
+/**
+ *  Récupère le status météo atuel de Paris grâce à un appel à l'api openweathermap
+ */
 function getCurrentWeather() {
     var url = "https://api.openweathermap.org/data/2.5/weather?q=Paris,fr?&lang=fr&APPID=0f8facfa615da89b6533605fa0ee2c4d";
     fetch(url) // Call the fetch function passing the url of the API as a parameter
